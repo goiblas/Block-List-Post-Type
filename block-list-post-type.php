@@ -50,7 +50,7 @@ function block_list_post_type_register_block() {
 	 ) );
 }
 
-add_action( 'init', 'block_list_post_type_register_block', 1 );
+add_action( 'init', 'block_list_post_type_register_block');
 
 /**
  * Render block in frontend

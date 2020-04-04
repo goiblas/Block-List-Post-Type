@@ -18,11 +18,14 @@ defined('ABSPATH') || exit;
  * Register block
  */
 function block_list_post_type_register_block() {
+
+	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+
 	wp_register_script(
 		'block_list_post_type_scripts',
 		plugins_url( 'build/index.js', __FILE__ ),
-		array("wp-blocks","wp-components","wp-data","wp-element","wp-polyfill"),
-		filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js')
+		$asset_file['dependencies'],
+		$asset_file['version']
 	);
 
 	$args = array(

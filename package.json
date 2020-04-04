@@ -10,6 +10,6 @@
   "author": "Jesús Olazagoitia",
   "license": "ISC",
   "dependencies": {
-    "@wordpress/scripts": "^3.3.0"
+    "@wordpress/scripts": "^7.2.0"
   }
 }

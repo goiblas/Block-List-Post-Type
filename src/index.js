@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { SelectControl } from '@wordpress/components';
-import EntityList from "./entityList";
+import ArticlesList from "./articlesList";
 
 registerBlockType( 'block-list-post-type/block-list-post-type', {
 	title: 'List Post Type',
@@ -24,7 +24,7 @@ registerBlockType( 'block-list-post-type/block-list-post-type', {
 						} }
 						/>
 				</div>
-				<EntityList entity={ selected } />
+				<ArticlesList type={ selected } />
 			</div>
 		) 
     },

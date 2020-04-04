@@ -1,8 +1,8 @@
 import { Spinner } from '@wordpress/components';
 import { withSelect } from '@wordpress/data';
 
-const EntityList = ({ entities }) => {
-    if ( ! entities ) {
+const ArticlesList = ({ articles }) => {
+    if ( ! articles ) {
         return (
             <p style={{textAlign: "center", padding: "1rem"}}>
                 <Spinner />
@@ -11,10 +11,10 @@ const EntityList = ({ entities }) => {
     }
     return (
         <ul>
-            { entities.map( (entity, index) => (
+            { articles.map( (article, index) => (
                     <li key={index}>
-                        <a href={ entity.link }>
-                            { entity.title.rendered }
+                        <a href={ article.link }>
+                            { article.title.rendered }
                         </a>
                     </li>
                 ))
@@ -25,6 +25,6 @@ const EntityList = ({ entities }) => {
 
 export default withSelect( (select, props) => {
     return {
-        entities : select( 'core' ).getEntityRecords( 'postType', props.entity, { per_page: 6 } )
+        articles : select( 'core' ).getEntityRecords( 'postType', props.type, { per_page: 6 } )
     }}
-)(EntityList)
+)(ArticlesList)
